@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music Editing Evaluation</title>
+  <title>Music Editing Listening Test</title>
   <style>
     /* Basic styles for a clean, academic look */
     body {
@@ -82,15 +82,18 @@
       border-radius: 50px;
     }
 
-    /* Styling for prompts */
+    /* Enhanced styling for prompts with light blue background */
     .prompt {
-      background-color: #f5f5f5;
+      background-color: #e8f4f8;
       border-left: 4px solid #007bff;
-      padding: 12px 18px;
+      padding: 14px 20px;
       margin: 1em 0;
-      font-family: monospace;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 1.05em;
       border-radius: 4px;
+      color: #2c3e50;
+      font-weight: 500;
+      box-shadow: 0 1px 3px rgba(0, 123, 255, 0.1);
     }
 
     .evaluation-module {
@@ -109,11 +112,26 @@
 
     .question-block {
       margin-top: 1.5rem;
+      padding: 1rem;
+      background-color: #fafafa;
+      border-radius: 6px;
+      border-left: 3px solid #007bff;
     }
 
     .question-text {
       font-weight: 500;
       margin-bottom: 0.8em;
+      color: #2a2a2a;
+    }
+
+    .question-explanation {
+      font-size: 0.9em;
+      color: #666;
+      font-style: italic;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      padding-left: 1em;
+      border-left: 2px solid #ddd;
     }
 
     .likert-scale {
@@ -139,58 +157,72 @@
       font-size: 0.9em;
       color: #555;
     }
+
+    .method-label {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      font-weight: 600;
+      margin-left: 10px;
+    }
   </style>
 </head>
 
 <body>
 
   <div class="container">
-    <h1>Music Listening Test</h1>
+    <h1>Music Editing Listening Test</h1>
 
     <section id="introduction">
       <h2>Instructions</h2>
-      <p>Welcome! In this short listening test, you'll help us evaluate some edited music clips. Here’s how it works:
-      </p>
+      <p>Welcome! In this short listening test, you'll help us evaluate some edited music clips. Your evaluation will be
+        of great help to us.</p>
+      <p><strong>What you'll do:</strong></p>
       <ul>
-        <li><strong>First, you'll see the "Source Music" and a "Source Prompt".</strong> The "Source Music" is the
-          original music clip. The "Source Prompt" is simply a text description of that original music (e.g., "An upbeat
-          rock song").</li>
-        <li><strong>Next, you'll see a "Target Prompt".</strong> This is a description of how we want to change the
-          music (e.g., "An epic soundtrack").</li>
-        <li><strong>Your Task:</strong> You will then hear an "Edited Result", which is a computer's attempt to apply
-          that change. Your task is to judge how well the edited music matches the target description while still
-          preserving the musical quality (like the melody and rhythm) of the original song.</li>
+        <li><strong>First, you'll hear the "Source Music"</strong> — this is the original music clip that we want to
+          modify.</li>
+        <li><strong>You'll see a "Source Prompt"</strong> — a text description of what the original music sounds like
+          (e.g., "A recording of soulful male vocals").</li>
+        <li><strong>You'll see a "Target Prompt"</strong> — a description of how we want to change the music (e.g.,
+          "A recording of bright flute").</li>
+        <li><strong>Then, you'll hear an "Edited Result"</strong> — this is the computer's attempt to apply that change.
+          Your task is to judge how well it worked.</li>
       </ul>
-      <p>Please use headphones for the best experience. There are no right or wrong answers—we're just interested in
-        your opinion. Thank you for your help!</p>
+      <p><strong>What to expect:</strong> You may hear very similar audio clips across different results. This is normal
+        and expected. Please trust your intuition and rate each result based on what you hear.</p>
+      <p><strong>Please use headphones</strong> for the best listening experience. There are no right or wrong
+        answers—we
+        value your honest opinion. Thank you for your help!</p>
     </section>
 
     <section id="listening-test">
       <h2>Listening Test</h2>
 
-      <!-- Template for each evaluation -->
+      <!-- Result 1: Proposed Method -->
       <div class="evaluation-module">
         <h3>Edited Result 1</h3>
 
         <h4>Source Music & Prompts</h4>
         <p><strong>Source Music:</strong></p>
-        <audio controls src="static/audio/wavs_figure1/origin.wav">Your browser does not support the audio
-          element.</audio>
+        <audio controls src="static/audio/origin.wav">Your browser does not support the audio element.</audio>
         <p><strong>Source Prompt:</strong></p>
-        <div class="prompt">A recording of an upbeat rock song.</div>
+        <div class="prompt">A recording of soulful male vocals, deep bass and punchy drums.</div>
         <p><strong>Target Prompt:</strong></p>
-        <div class="prompt">A recording of an epic soundtrack.</div>
+        <div class="prompt">A recording of bright flute, deep bass and punchy drums.</div>
 
         <hr>
 
         <h4>Edited Result</h4>
-        <audio controls src="static/audio/wavs_figure1/clarinet2guitar_ours.wav">Your browser does not support the audio
-          element.</audio>
+        <audio controls src="static/audio/our.wav">Your browser does not support the audio element.</audio>
 
         <div class="question-block">
-          <p class="question-text"><strong>Question 1 (Balance):</strong> How would you rate the balance between the
-            adherence of this edited music to the target prompt and its preservation of temporal structure (e.g., melody
-            and rhythm) and musicality (e.g., harmonic, melodic, and pitch elements) from the original music?</p>
+          <p class="question-text"><strong>Question 1 (Target Accuracy):</strong> Does the instrument or timbre in this
+            edited music actually sound like what the target description asks for?</p>
+          <p class="question-explanation">For example: If the target asks to change something to a guitar sound, does it
+            actually sound like a guitar?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q1_res1" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q1_res1" value="2"></label></li>
@@ -200,8 +232,10 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 2 (Relevance):</strong> How would you rate the semantic closeness
-            between this edited music and the target prompt?</p>
+          <p class="question-text"><strong>Question 2 (Background Preservation):</strong> Besides the main sound we're
+            trying to change, does the background music (accompaniment, drums, etc.) stay the same?</p>
+          <p class="question-explanation">Are there any strange noises or parts that were incorrectly modified in the
+            background?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q2_res1" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q2_res1" value="2"></label></li>
@@ -211,8 +245,10 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 3 (Consistency):</strong> How would you rate the consistency of
-            pitch contour and structural aspects between the original and edited music?</p>
+          <p class="question-text"><strong>Question 3 (Overall Naturalness):</strong> Does the edited sound blend
+            naturally with the background music?</p>
+          <p class="question-explanation">Does it sound like a complete, coherent song, or does it sound like parts were
+            awkwardly pieced together?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q3_res1" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q3_res1" value="2"></label></li>
@@ -223,29 +259,28 @@
         </div>
       </div>
 
-      <!-- Repeat module for each result -->
+      <!-- Result 2: SteerMusic -->
       <div class="evaluation-module">
         <h3>Edited Result 2</h3>
 
         <h4>Source Music & Prompts</h4>
         <p><strong>Source Music:</strong></p>
-        <audio controls src="static/audio/wavs_figure1/origin.wav">Your browser does not support the audio
-          element.</audio>
+        <audio controls src="static/audio/origin.wav">Your browser does not support the audio element.</audio>
         <p><strong>Source Prompt:</strong></p>
-        <div class="prompt">A recording of an upbeat rock song.</div>
+        <div class="prompt">A recording of soulful male vocals, deep bass and punchy drums.</div>
         <p><strong>Target Prompt:</strong></p>
-        <div class="prompt">A recording of an epic soundtrack.</div>
+        <div class="prompt">A recording of bright flute, deep bass and punchy drums.</div>
 
         <hr>
 
         <h4>Edited Result</h4>
-        <audio controls src="static/audio/wavs_figure1/clarinet2guitar_sdedit.wav">Your browser does not support the
-          audio element.</audio>
+        <audio controls src="static/audio/steermusic.wav">Your browser does not support the audio element.</audio>
 
         <div class="question-block">
-          <p class="question-text"><strong>Question 1 (Balance):</strong> How would you rate the balance between the
-            adherence of this edited music to the target prompt and its preservation of temporal structure (e.g., melody
-            and rhythm) and musicality (e.g., harmonic, melodic, and pitch elements) from the original music?</p>
+          <p class="question-text"><strong>Question 1 (Target Accuracy):</strong> Does the instrument or timbre in this
+            edited music actually sound like what the target description asks for?</p>
+          <p class="question-explanation">For example: If the target asks to change something to a guitar sound, does it
+            actually sound like a guitar?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q1_res2" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q1_res2" value="2"></label></li>
@@ -255,8 +290,10 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 2 (Relevance):</strong> How would you rate the semantic closeness
-            between this edited music and the target prompt?</p>
+          <p class="question-text"><strong>Question 2 (Background Preservation):</strong> Besides the main sound we're
+            trying to change, does the background music (accompaniment, drums, etc.) stay the same?</p>
+          <p class="question-explanation">Are there any strange noises or parts that were incorrectly modified in the
+            background?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q2_res2" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q2_res2" value="2"></label></li>
@@ -266,8 +303,10 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 3 (Consistency):</strong> How would you rate the consistency of
-            pitch contour and structural aspects between the original and edited music?</p>
+          <p class="question-text"><strong>Question 3 (Overall Naturalness):</strong> Does the edited sound blend
+            naturally with the background music?</p>
+          <p class="question-explanation">Does it sound like a complete, coherent song, or does it sound like parts were
+            awkwardly pieced together?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q3_res2" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q3_res2" value="2"></label></li>
@@ -278,28 +317,28 @@
         </div>
       </div>
 
+      <!-- Result 3: MusicGen -->
       <div class="evaluation-module">
         <h3>Edited Result 3</h3>
 
         <h4>Source Music & Prompts</h4>
         <p><strong>Source Music:</strong></p>
-        <audio controls src="static/audio/wavs_figure1/origin.wav">Your browser does not support the audio
-          element.</audio>
+        <audio controls src="static/audio/origin.wav">Your browser does not support the audio element.</audio>
         <p><strong>Source Prompt:</strong></p>
-        <div class="prompt">A recording of an upbeat rock song.</div>
+        <div class="prompt">A recording of soulful male vocals, deep bass and punchy drums.</div>
         <p><strong>Target Prompt:</strong></p>
-        <div class="prompt">A recording of an epic soundtrack.</div>
+        <div class="prompt">A recording of bright flute, deep bass and punchy drums.</div>
 
         <hr>
 
         <h4>Edited Result</h4>
-        <audio controls src="static/audio/wavs_figure1/clarinet2guitar_musicgen.wav">Your browser does not support the
-          audio element.</audio>
+        <audio controls src="static/audio/musicgen.wav">Your browser does not support the audio element.</audio>
 
         <div class="question-block">
-          <p class="question-text"><strong>Question 1 (Balance):</strong> How would you rate the balance between the
-            adherence of this edited music to the target prompt and its preservation of temporal structure (e.g., melody
-            and rhythm) and musicality (e.g., harmonic, melodic, and pitch elements) from the original music?</p>
+          <p class="question-text"><strong>Question 1 (Target Accuracy):</strong> Does the instrument or timbre in this
+            edited music actually sound like what the target description asks for?</p>
+          <p class="question-explanation">For example: If the target asks to change something to a guitar sound, does it
+            actually sound like a guitar?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q1_res3" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q1_res3" value="2"></label></li>
@@ -309,8 +348,10 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 2 (Relevance):</strong> How would you rate the semantic closeness
-            between this edited music and the target prompt?</p>
+          <p class="question-text"><strong>Question 2 (Background Preservation):</strong> Besides the main sound we're
+            trying to change, does the background music (accompaniment, drums, etc.) stay the same?</p>
+          <p class="question-explanation">Are there any strange noises or parts that were incorrectly modified in the
+            background?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q2_res3" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q2_res3" value="2"></label></li>
@@ -320,8 +361,10 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 3 (Consistency):</strong> How would you rate the consistency of
-            pitch contour and structural aspects between the original and edited music?</p>
+          <p class="question-text"><strong>Question 3 (Overall Naturalness):</strong> Does the edited sound blend
+            naturally with the background music?</p>
+          <p class="question-explanation">Does it sound like a complete, coherent song, or does it sound like parts were
+            awkwardly pieced together?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q3_res3" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q3_res3" value="2"></label></li>
@@ -332,28 +375,28 @@
         </div>
       </div>
 
+      <!-- Result 4: SDEdit -->
       <div class="evaluation-module">
         <h3>Edited Result 4</h3>
 
         <h4>Source Music & Prompts</h4>
         <p><strong>Source Music:</strong></p>
-        <audio controls src="static/audio/wavs_figure1/origin.wav">Your browser does not support the audio
-          element.</audio>
+        <audio controls src="static/audio/origin.wav">Your browser does not support the audio element.</audio>
         <p><strong>Source Prompt:</strong></p>
-        <div class="prompt">A recording of an upbeat rock song.</div>
+        <div class="prompt">A recording of soulful male vocals, deep bass and punchy drums.</div>
         <p><strong>Target Prompt:</strong></p>
-        <div class="prompt">A recording of an epic soundtrack.</div>
+        <div class="prompt">A recording of bright flute, deep bass and punchy drums.</div>
 
         <hr>
 
         <h4>Edited Result</h4>
-        <audio controls src="static/audio/wavs_figure1/clarinet2guitar_magus.wav">Your browser does not support the
-          audio element.</audio>
+        <audio controls src="static/audio/sdedit.wav">Your browser does not support the audio element.</audio>
 
         <div class="question-block">
-          <p class="question-text"><strong>Question 1 (Balance):</strong> How would you rate the balance between the
-            adherence of this edited music to the target prompt and its preservation of temporal structure (e.g., melody
-            and rhythm) and musicality (e.g., harmonic, melodic, and pitch elements) from the original music?</p>
+          <p class="question-text"><strong>Question 1 (Target Accuracy):</strong> Does the instrument or timbre in this
+            edited music actually sound like what the target description asks for?</p>
+          <p class="question-explanation">For example: If the target asks to change something to a guitar sound, does it
+            actually sound like a guitar?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q1_res4" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q1_res4" value="2"></label></li>
@@ -363,8 +406,10 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 2 (Relevance):</strong> How would you rate the semantic closeness
-            between this edited music and the target prompt?</p>
+          <p class="question-text"><strong>Question 2 (Background Preservation):</strong> Besides the main sound we're
+            trying to change, does the background music (accompaniment, drums, etc.) stay the same?</p>
+          <p class="question-explanation">Are there any strange noises or parts that were incorrectly modified in the
+            background?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q2_res4" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q2_res4" value="2"></label></li>
@@ -374,8 +419,10 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 3 (Consistency):</strong> How would you rate the consistency of
-            pitch contour and structural aspects between the original and edited music?</p>
+          <p class="question-text"><strong>Question 3 (Overall Naturalness):</strong> Does the edited sound blend
+            naturally with the background music?</p>
+          <p class="question-explanation">Does it sound like a complete, coherent song, or does it sound like parts were
+            awkwardly pieced together?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q3_res4" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q3_res4" value="2"></label></li>
@@ -386,28 +433,28 @@
         </div>
       </div>
 
+      <!-- Result 5: DDPM -->
       <div class="evaluation-module">
         <h3>Edited Result 5</h3>
 
         <h4>Source Music & Prompts</h4>
         <p><strong>Source Music:</strong></p>
-        <audio controls src="static/audio/wavs_figure1/origin.wav">Your browser does not support the audio
-          element.</audio>
+        <audio controls src="static/audio/origin.wav">Your browser does not support the audio element.</audio>
         <p><strong>Source Prompt:</strong></p>
-        <div class="prompt">A recording of an upbeat rock song.</div>
+        <div class="prompt">A recording of soulful male vocals, deep bass and punchy drums.</div>
         <p><strong>Target Prompt:</strong></p>
-        <div class="prompt">A recording of an epic soundtrack.</div>
+        <div class="prompt">A recording of bright flute, deep bass and punchy drums.</div>
 
         <hr>
 
         <h4>Edited Result</h4>
-        <audio controls src="static/audio/wavs_figure1/clarinet2guitar_ddpm.wav">Your browser does not support the audio
-          element.</audio>
+        <audio controls src="static/audio/ddpm.wav">Your browser does not support the audio element.</audio>
 
         <div class="question-block">
-          <p class="question-text"><strong>Question 1 (Balance):</strong> How would you rate the balance between the
-            adherence of this edited music to the target prompt and its preservation of temporal structure (e.g., melody
-            and rhythm) and musicality (e.g., harmonic, melodic, and pitch elements) from the original music?</p>
+          <p class="question-text"><strong>Question 1 (Target Accuracy):</strong> Does the instrument or timbre in this
+            edited music actually sound like what the target description asks for?</p>
+          <p class="question-explanation">For example: If the target asks to change something to a guitar sound, does it
+            actually sound like a guitar?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q1_res5" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q1_res5" value="2"></label></li>
@@ -417,8 +464,10 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 2 (Relevance):</strong> How would you rate the semantic closeness
-            between this edited music and the target prompt?</p>
+          <p class="question-text"><strong>Question 2 (Background Preservation):</strong> Besides the main sound we're
+            trying to change, does the background music (accompaniment, drums, etc.) stay the same?</p>
+          <p class="question-explanation">Are there any strange noises or parts that were incorrectly modified in the
+            background?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q2_res5" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q2_res5" value="2"></label></li>
@@ -428,8 +477,10 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 3 (Consistency):</strong> How would you rate the consistency of
-            pitch contour and structural aspects between the original and edited music?</p>
+          <p class="question-text"><strong>Question 3 (Overall Naturalness):</strong> Does the edited sound blend
+            naturally with the background music?</p>
+          <p class="question-explanation">Does it sound like a complete, coherent song, or does it sound like parts were
+            awkwardly pieced together?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q3_res5" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q3_res5" value="2"></label></li>
@@ -440,28 +491,28 @@
         </div>
       </div>
 
+      <!-- Result 6: DDIM -->
       <div class="evaluation-module">
         <h3>Edited Result 6</h3>
 
         <h4>Source Music & Prompts</h4>
         <p><strong>Source Music:</strong></p>
-        <audio controls src="static/audio/wavs_figure1/origin.wav">Your browser does not support the audio
-          element.</audio>
+        <audio controls src="static/audio/origin.wav">Your browser does not support the audio element.</audio>
         <p><strong>Source Prompt:</strong></p>
-        <div class="prompt">A recording of an upbeat rock song.</div>
+        <div class="prompt">A recording of soulful male vocals, deep bass and punchy drums.</div>
         <p><strong>Target Prompt:</strong></p>
-        <div class="prompt">A recording of an epic soundtrack.</div>
+        <div class="prompt">A recording of bright flute, deep bass and punchy drums.</div>
 
         <hr>
 
         <h4>Edited Result</h4>
-        <audio controls src="static/audio/wavs_figure1/clarinet2guitar_ddim.wav">Your browser does not support the audio
-          element.</audio>
+        <audio controls src="static/audio/ddim.wav">Your browser does not support the audio element.</audio>
 
         <div class="question-block">
-          <p class="question-text"><strong>Question 1 (Balance):</strong> How would you rate the balance between the
-            adherence of this edited music to the target prompt and its preservation of temporal structure (e.g., melody
-            and rhythm) and musicality (e.g., harmonic, melodic, and pitch elements) from the original music?</p>
+          <p class="question-text"><strong>Question 1 (Target Accuracy):</strong> Does the instrument or timbre in this
+            edited music actually sound like what the target description asks for?</p>
+          <p class="question-explanation">For example: If the target asks to change something to a guitar sound, does it
+            actually sound like a guitar?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q1_res6" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q1_res6" value="2"></label></li>
@@ -471,8 +522,10 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 2 (Relevance):</strong> How would you rate the semantic closeness
-            between this edited music and the target prompt?</p>
+          <p class="question-text"><strong>Question 2 (Background Preservation):</strong> Besides the main sound we're
+            trying to change, does the background music (accompaniment, drums, etc.) stay the same?</p>
+          <p class="question-explanation">Are there any strange noises or parts that were incorrectly modified in the
+            background?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q2_res6" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q2_res6" value="2"></label></li>
@@ -482,14 +535,74 @@
           </ul>
         </div>
         <div class="question-block">
-          <p class="question-text"><strong>Question 3 (Consistency):</strong> How would you rate the consistency of
-            pitch contour and structural aspects between the original and edited music?</p>
+          <p class="question-text"><strong>Question 3 (Overall Naturalness):</strong> Does the edited sound blend
+            naturally with the background music?</p>
+          <p class="question-explanation">Does it sound like a complete, coherent song, or does it sound like parts were
+            awkwardly pieced together?</p>
           <ul class="likert-scale">
             <li><label class="likert-label">1: Bad<input type="radio" name="q3_res6" value="1"></label></li>
             <li><label class="likert-label">2: Poor<input type="radio" name="q3_res6" value="2"></label></li>
             <li><label class="likert-label">3: Fair<input type="radio" name="q3_res6" value="3"></label></li>
             <li><label class="likert-label">4: Good<input type="radio" name="q3_res6" value="4"></label></li>
             <li><label class="likert-label">5: Excellent<input type="radio" name="q3_res6" value="5"></label></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Result 7: Melodia -->
+      <div class="evaluation-module">
+        <h3>Edited Result 7</h3>
+
+        <h4>Source Music & Prompts</h4>
+        <p><strong>Source Music:</strong></p>
+        <audio controls src="static/audio/origin.wav">Your browser does not support the audio element.</audio>
+        <p><strong>Source Prompt:</strong></p>
+        <div class="prompt">A recording of soulful male vocals, deep bass and punchy drums.</div>
+        <p><strong>Target Prompt:</strong></p>
+        <div class="prompt">A recording of bright flute, deep bass and punchy drums.</div>
+
+        <hr>
+
+        <h4>Edited Result</h4>
+        <audio controls src="static/audio/melodia.wav">Your browser does not support the audio element.</audio>
+
+        <div class="question-block">
+          <p class="question-text"><strong>Question 1 (Target Accuracy):</strong> Does the instrument or timbre in this
+            edited music actually sound like what the target description asks for?</p>
+          <p class="question-explanation">For example: If the target asks to change something to a guitar sound, does it
+            actually sound like a guitar?</p>
+          <ul class="likert-scale">
+            <li><label class="likert-label">1: Bad<input type="radio" name="q1_res7" value="1"></label></li>
+            <li><label class="likert-label">2: Poor<input type="radio" name="q1_res7" value="2"></label></li>
+            <li><label class="likert-label">3: Fair<input type="radio" name="q1_res7" value="3"></label></li>
+            <li><label class="likert-label">4: Good<input type="radio" name="q1_res7" value="4"></label></li>
+            <li><label class="likert-label">5: Excellent<input type="radio" name="q1_res7" value="5"></label></li>
+          </ul>
+        </div>
+        <div class="question-block">
+          <p class="question-text"><strong>Question 2 (Background Preservation):</strong> Besides the main sound we're
+            trying to change, does the background music (accompaniment, drums, etc.) stay the same?</p>
+          <p class="question-explanation">Are there any strange noises or parts that were incorrectly modified in the
+            background?</p>
+          <ul class="likert-scale">
+            <li><label class="likert-label">1: Bad<input type="radio" name="q2_res7" value="1"></label></li>
+            <li><label class="likert-label">2: Poor<input type="radio" name="q2_res7" value="2"></label></li>
+            <li><label class="likert-label">3: Fair<input type="radio" name="q2_res7" value="3"></label></li>
+            <li><label class="likert-label">4: Good<input type="radio" name="q2_res7" value="4"></label></li>
+            <li><label class="likert-label">5: Excellent<input type="radio" name="q2_res7" value="5"></label></li>
+          </ul>
+        </div>
+        <div class="question-block">
+          <p class="question-text"><strong>Question 3 (Overall Naturalness):</strong> Does the edited sound blend
+            naturally with the background music?</p>
+          <p class="question-explanation">Does it sound like a complete, coherent song, or does it sound like parts were
+            awkwardly pieced together?</p>
+          <ul class="likert-scale">
+            <li><label class="likert-label">1: Bad<input type="radio" name="q3_res7" value="1"></label></li>
+            <li><label class="likert-label">2: Poor<input type="radio" name="q3_res7" value="2"></label></li>
+            <li><label class="likert-label">3: Fair<input type="radio" name="q3_res7" value="3"></label></li>
+            <li><label class="likert-label">4: Good<input type="radio" name="q3_res7" value="4"></label></li>
+            <li><label class="likert-label">5: Excellent<input type="radio" name="q3_res7" value="5"></label></li>
           </ul>
         </div>
       </div>
